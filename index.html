@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=1280px, initial-scale=1">
+		<style>
+			body {
+			  width:1280px
+			  height:720px
+			}
+
+			.content {
+			  max-width: 1280px;
+			  margin: auto;
+			  background: black;
+			  padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<video class="content" src="./videos/__intro.mp4" width=1280 height=720 controls autoplay id="myvideo">
+			</video>
+		<div/>
+	<body/>
+	<script type='text/javascript'>
+	  var directory = './videos';
+		var myvids = ['_','_','i','n','t','r','o','.','m','p','4']
+
+;
+		index=0;
+		document.getElementById('myvideo').addEventListener('ended',myHandler,false);
+		function myHandler(e) {
+		 index = Math.floor(Math.random() * myvids.length);
+		   // For Repeating all video files 
+		   if(index>=myvids.length)
+			index=0;
+
+		 var vid = document.getElementById("myvideo");
+		   vid.src = directory+'/'+myvids[index];
+		}
+
+	</script>
+</html>
+
+
+
